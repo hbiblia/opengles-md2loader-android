@@ -1,13 +1,9 @@
 #include "Md2.h"
 #include "ShaderProgram.h"
 #include "Texture2D.h"
-#include <jni.h>
+#include "GL.h"
 
 using namespace md2model;
-
-#define BASE_ASSET_PATH  "/data/user/0/org.raydelto.md2loader/files/"
-#define TEXTURE_PATH(name) BASE_ASSET_PATH name
-#define SHADER_PATH(name)  BASE_ASSET_PATH name
 
 Md2::Md2(char *md2FileName, char* textureFileName): m_texture(std::make_unique<Texture2D>()) , 
 													m_shaderProgram(std::make_unique<ShaderProgram>()),
@@ -16,9 +12,9 @@ Md2::Md2(char *md2FileName, char* textureFileName): m_texture(std::make_unique<T
 													m_textureLoaded(false),
 													m_bufferInitialized(false)
 {
-    LoadTexture(TEXTURE_PATH("female.tga"));
-	LoadModel(TEXTURE_PATH("female.md2"));
-    m_shaderProgram->loadShaders(SHADER_PATH("basic.vert"), SHADER_PATH("basic.frag"));
+	LoadTexture(NORMALIZE_PATH("female.tga"));
+	LoadModel(NORMALIZE_PATH("female.md2"));
+	m_shaderProgram->loadShaders(NORMALIZE_PATH("basic.vert"), NORMALIZE_PATH("basic.frag"));
 	InitBuffer();
 
 }

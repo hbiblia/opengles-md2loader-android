@@ -3,11 +3,8 @@
 #include <cassert>
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image/stb_image.h"
-#include <android/log.h>
-
 #define LOG_TAG "Md2"
-#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
-
+#include "GL.h"
 
 Texture2D::Texture2D()
 	: mTexture(0)

@@ -2,8 +2,7 @@
 
 #include <string>
 #include <map>
-#include <GLES2/gl2.h>
-#include <GLES2/gl2ext.h>
+#include "GL.h"
 
 #include "glm/glm.hpp"
 using std::string;

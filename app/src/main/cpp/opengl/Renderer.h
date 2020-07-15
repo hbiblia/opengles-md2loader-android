@@ -1,8 +1,7 @@
 #pragma once
 
-#include <jni.h>
-#include <GLES2/gl2.h>
-#include <GLES2/gl2ext.h>
+#include "GL.h"
+
 #include <math.h>
 #include "glm/glm.hpp"
 
@@ -13,6 +12,7 @@ public:
     void onDrawFrame();
     void setScreenSize(int width, int height);
     void setRotationAngles(float width, float height);
+    void addRotationAngles(float x, float y);
     void setScale(float scale);
 
 private:

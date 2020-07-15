@@ -66,6 +66,12 @@ void Renderer::setRotationAngles(float x, float y)
     m_rotationY = y;
 }
 
+void Renderer::addRotationAngles(float x, float y)
+{
+    m_xAngle -= x;
+    m_yAngle -= y;
+}
+
 void Renderer::setScale(float scale)
 {
     m_scale = scale;
