@@ -13,6 +13,12 @@ OBJ = $(SRC:.cpp=.o)
 ifeq ($(OS),Windows_NT)
 BIN := $(BIN).exe
 LIBS = `pkg-config --libs glfw3 epoxy` -lopengl32 -lm -lGLU32
+else
+	UNAME_S := $(shell uname -s)
+	ifeq ($(UNAME_S),Darwin)
+	else
+		LIBS = -lglfw -lepoxy -lGL -lm -lGLU
+	endif
 endif
 
 $(BIN):
